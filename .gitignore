@@ -1,0 +1,9 @@
+# Python stuff
+*.pyc
+VENV
+
+# npm
+npm-debug.log
+
+# Yarn
+yarn-error.log

@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+
+!htop/
+!i3/
+!polybar/
+!rofi/

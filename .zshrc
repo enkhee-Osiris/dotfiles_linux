@@ -13,7 +13,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="clean"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -24,11 +24,11 @@ ZSH_THEME="robbyrussell"
 # COMPLETION_WAITING_DOTS="true"
 # Format of command execution time stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd.mm.yyyy"
+# HIST_STAMPS="dd.mm.yyyy"
 # Custom custom folder
-ZSH_CUSTOM="$HOME/dotfiles/zsh"
+# ZSH_CUSTOM="$HOME/dotfiles/zsh"
 
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(extract git-extras zsh-syntax-highlighting)
+plugins=(extract git-extras zsh-syntax-highlighting python yarn)
 source $ZSH/oh-my-zsh.sh

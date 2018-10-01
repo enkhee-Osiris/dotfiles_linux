@@ -93,7 +93,7 @@ set $ws5 "5: SYS"
 set $ws6 "6: COM"
 ## Doc
 set $ws7 "7: DOC"
-#set $ws8 mail
+set $ws8 "8: REV"
 #set $ws9 "9"
 set $ws10 "10: MON"
 
@@ -105,7 +105,7 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
-#bindsym $mod+8 workspace $ws8
+bindsym $mod+8 workspace $ws8
 #bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
@@ -128,25 +128,26 @@ for_window [window_type="dialog|menu"] floating enable
 for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
 for_window [class="(?i)pavucontrol|lxappearance|xarchiver|kamus"] floating enable
 for_window [title="(?i)Filemanager"] floating enable, resize set 1280 600, move position center, focus
-for_window [class="(?i)st|termite|viewnior|chromium|bomi|vimiv"] focus
+for_window [class="(?i)st|urxvt|viewnior|firefox|bomi|vimiv|emacs|binaryninja|hopper"] focus
 for_window [class="(?i)securecrt|wireshark-gtk"] floating enable, border pixel 2
 for_window [class="(?i)securecrt"] move window to scratchpad, scratchpad show
 for_window [window_role="telnet"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
 for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws6] layout tabbed
 for_window [workspace=$ws7] layout tabbed
+for_window [workspace=$ws8] layout tabbed
 
 ## Specific workspaces
 assign [window_role="(?i)telnet"] $ws3
-assign [class="(?i)emacs|Emacs|Eclipse"] $ws3
-assign [title="htop"] $ws10
+assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk"] $ws3
+assign [class="(?i)spotify|mcomix|mpv|vimiv|gravitdesigner|smplayer"] $ws4
 assign [title="Filemanager"] $ws5
-assign [class="(?i)telegram|irssi"] $ws6
+assign [class="(?i)telegram|irssi|slack"] $ws6
+assign [class="(?i)mupdf|zathura|fbreader|zeal"] $ws7
+assign [class="(?i)hopper|binaryninja"] $ws8
+assign [title="htop"] $ws10
+assign [class="(?i)st|urxvt"] $ws1
 assign [window_role="browser"] $ws2
-assign [class="(?i)st|termite"] $ws1
-assign [class="(?i)gns3|securecrt|wireshark-gtk"] $ws3
-assign [class="(?i)Spotify|mcomix|mpv|vimiv|gimp-2.8|smplayer"] $ws4
-assign [class="(?i)subl3|mupdf|zathura|fbreader|zeal|Zeal"] $ws7
 
 
 # Color

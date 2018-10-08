@@ -28,6 +28,9 @@ ZSH_THEME="clean"
 # Custom custom folder
 # ZSH_CUSTOM="$HOME/dotfiles/zsh"
 
+# Dircolors NORD
+eval `dircolors ~/.dir_colors`
+
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(extract git-extras zsh-syntax-highlighting python yarn)

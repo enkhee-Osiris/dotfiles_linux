@@ -139,11 +139,13 @@ animation-charging-framerate = 750
 
 
 [module/volume]
-type = internal/volume
-speaker-mixer = Speaker
-headphone-mixer = Headphone
-headphone-id = 14
-mapped = true
+type = internal/pulseaudio
+
+sink = bluez_sink.00_18_09_9B_C5_CA.a2dp_sink
+
+use-ui-max = true
+
+interval = 5
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
@@ -158,6 +160,12 @@ ramp-volume-3 = 
 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
+
+; type = internal/volume
+; speaker-mixer = Speaker
+; headphone-mixer = Headphone
+; headphone-id = 14
+; mapped = true
 
 [module/date]
 type = internal/date

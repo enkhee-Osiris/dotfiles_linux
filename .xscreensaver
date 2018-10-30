@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.39 for osiris on Fri Jul 20 17:25:35 2018.
+# Written by xscreensaver-demo 5.40 for osiris on Fri Oct 26 11:46:19 2018.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:01:00
-cycle:		0:01:00
+timeout:	0:10:00
+cycle:		0:00:00
 lock:		True
-lockTimeout:	0:02:00
+lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
@@ -278,9 +278,12 @@ programs:								      \
   GL: 				esper -root				    \n\
   GL: 				vigilance -root				    \n\
   GL: 				crumbler -root				    \n\
+				filmleader -root			    \n\
+				glitchpeg -root				    \n\
   GL: 				maze3d -root				    \n\
   GL: 				peepers -root				    \n\
   GL: 				razzledazzle -root			    \n\
+				vfeedback -root				    \n\
 
 
 pointerPollTime:    0:00:05

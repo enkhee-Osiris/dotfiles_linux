@@ -21,6 +21,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun"
 bindsym $mod+p exec --no-startup-id "urxvt -T 'Filemanager' -e ranger"
 bindsym $mod+b exec --no-startup-id "firefox"
 bindsym $mod+Shift+b exec --no-startup-id "firefox --private-window"
+bindsym $mod+Control+l exec --no-startup-id "xscreensaver-command -lock"
 
 ## Window Focus (vim)
 bindsym $mod+Tab focus right
@@ -139,8 +140,8 @@ for_window [workspace=$ws8] layout tabbed
 
 ## Specific workspaces
 assign [window_role="(?i)telnet"] $ws3
-assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk"] $ws3
-assign [class="(?i)spotify|mcomix|mpv|vimiv|gravitdesigner|smplayer"] $ws4
+assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk|jetbrains-studio"] $ws3
+assign [class="(?i)spotify|vlc|mcomix|mpv|vimiv|gravitdesigner|smplayer"] $ws4
 assign [title="Filemanager"] $ws5
 assign [class="(?i)telegram|irssi|slack"] $ws6
 assign [class="(?i)mupdf|zathura|fbreader|zeal"] $ws7
@@ -166,3 +167,4 @@ client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
 # Startup
 exec_always --no-startup-id "feh --bg-scale ~/.config/i3/bg.jpg"
 exec_always --no-startup-id "sh ~/.config/polybar/launch.sh"
+exec_always --no-startup-id "xscreensaver -no-splash"

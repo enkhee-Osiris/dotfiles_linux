@@ -14,9 +14,6 @@ if [[ -d $HOME/Android/Sdk ]]; then
   [ -d $ANDROID_HOME/platform-tools ] && PATH=$PATH:$ANDROID_HOME/platform-tools
   [ -d $ANDROID_HOME/emulator ] && PATH=$PATH:$ANDROID_HOME/emulator
   if [[ -d $ANDROID_HOME/opencv ]]; then
-    export CMAKE_MODULE_PATH=$HOME/Android/Sdk/opencv
-    export OpenCV_DIR=$HOME/Android/Sdk/opencv/native/jni
-    [ -d $ANDROID_HOME/opencv ] && PATH=$PATH:$ANDROID_HOME/opencv
-    [ -d $ANDROID_HOME/opencv/native ] && PATH=$PATH:$ANDROID_HOME/opencv/native
+    export OpenCV_ANDROID_HOME=$HOME/Android/Sdk/opencv
   fi
 fi

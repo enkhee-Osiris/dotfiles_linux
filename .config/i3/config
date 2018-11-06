@@ -134,6 +134,8 @@ for_window [class="(?i)securecrt|wireshark-gtk"] floating enable, border pixel 2
 for_window [class="(?i)securecrt"] move window to scratchpad, scratchpad show
 for_window [window_role="telnet"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
 for_window [workspace=$ws2] layout tabbed
+for_window [workspace=$ws3] layout tabbed
+for_window [workspace=$ws4] layout tabbed
 for_window [workspace=$ws6] layout tabbed
 for_window [workspace=$ws7] layout tabbed
 for_window [workspace=$ws8] layout tabbed
@@ -141,7 +143,7 @@ for_window [workspace=$ws8] layout tabbed
 ## Specific workspaces
 assign [window_role="(?i)telnet"] $ws3
 assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk|jetbrains-studio"] $ws3
-assign [class="(?i)spotify|vlc|mcomix|mpv|vimiv|gravitdesigner|smplayer"] $ws4
+assign [class="(?i)vlc|mcomix|mpv|vimiv|gravitdesigner|smplayer|feh"] $ws4
 assign [title="Filemanager"] $ws5
 assign [class="(?i)telegram|irssi|slack"] $ws6
 assign [class="(?i)mupdf|zathura|fbreader|zeal"] $ws7

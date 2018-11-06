@@ -29,12 +29,12 @@ ZSH_THEME="clean"
 # ZSH_CUSTOM="$HOME/dotfiles/zsh"
 
 # Dircolors NORD
-eval `dircolors ~/.dir_colors`
+eval $(dircolors $HOME/.dir_colors)
 
 # Zprofile
 [ -f $HOME/.zprofile ] && source $HOME/.zprofile
 
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(extract git-extras zsh-syntax-highlighting python yarn)
+plugins=(extract git-extras zsh-syntax-highlighting python yarn vi-mode)
 source $ZSH/oh-my-zsh.sh

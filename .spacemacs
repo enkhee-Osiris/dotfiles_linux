@@ -68,7 +68,6 @@ values."
      docker
      imenu-list
      java
-     dash
      dash)
 
    ;; List of additional packages that will be installed without being
@@ -76,10 +75,6 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
-   '(
-      nord-theme
-      editorconfig
-      dotenv-mode
    '(nord-theme
      editorconfig
      dotenv-mode)
@@ -88,7 +83,6 @@ values."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
    dotspacemacs-excluded-packages
    '(org-bullets)
 

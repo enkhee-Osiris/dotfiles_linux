@@ -347,6 +347,7 @@ you should place your code here."
   (spacemacs/add-to-hooks 'spacemacs/toggle-indent-guide-globally-on '(prog-mode-hook))
   (setq eclim-eclipse-dirs '("/usr/lib/eclipse")
         eclim-executable "/usr/lib/eclipse/eclim")
+  (add-to-list 'magic-mode-alist '("\/\/ @flow\n\nimport React" . react-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

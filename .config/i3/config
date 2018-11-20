@@ -142,7 +142,7 @@ for_window [workspace=$ws8] layout tabbed
 
 ## Specific workspaces
 assign [window_role="(?i)telnet"] $ws3
-assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk|jetbrains-studio"] $ws3
+assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk|jetbrains-studio|postman"] $ws3
 assign [class="(?i)vlc|mcomix|mpv|vimiv|gravitdesigner|smplayer|feh"] $ws4
 assign [title="Filemanager"] $ws5
 assign [class="(?i)telegram|irssi|slack"] $ws6

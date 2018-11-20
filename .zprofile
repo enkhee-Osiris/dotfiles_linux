@@ -3,6 +3,10 @@ if [[ -d $HOME/.node_modules ]]; then
   export npm_config_prefix=$HOME/.node_modules
 fi
 
+if [[ -f /usr/bin/composer ]]; then
+  PATH="$HOME/.config/composer/vendor/bin:$PATH"
+fi
+
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 	exec startx
 fi

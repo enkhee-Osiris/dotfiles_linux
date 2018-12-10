@@ -11,6 +11,11 @@ if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 	exec startx
 fi
 
+if [[ -f /usr/bin/java ]]; then
+    default_java=`archlinux-java status | grep -i 'default' | awk {'print $1'}`
+    export JAVA_HOME=/usr/lib/jvm/$default_java
+fi
+
 if [[ -d $HOME/Android/Sdk ]]; then
   export ANDROID_HOME=$HOME/Android/Sdk
   [ -d $ANDROID_HOME/tools ] && PATH=$PATH:$ANDROID_HOME/tools

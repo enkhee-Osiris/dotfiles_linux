@@ -1,6 +1,7 @@
 # Python stuff
 *.pyc
 VENV
+.tern-port
 
 # npm
 npm-debug.log

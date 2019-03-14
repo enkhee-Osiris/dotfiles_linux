@@ -95,7 +95,7 @@ set $ws6 "6: COM"
 ## Doc
 set $ws7 "7: DOC"
 set $ws8 "8: REV"
-#set $ws9 "9"
+set $ws9 "9: MLT"
 set $ws10 "10: MON"
 
 ## Workspace keybinding
@@ -107,7 +107,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-#bindsym $mod+9 workspace $ws9
+bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 ## Move to workspace
@@ -118,11 +118,12 @@ bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
-#bindsym $mod+Shift+8 move container to workspace $ws8
-#bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 ## Specific window
+for_window [class="Spotify"] move to workspace $ws4
 for_window [title="(?i)terminal-file"] floating enable, resize set 600 300, move position cursor
 for_window [window_role="pop-up|bubble|task_dialog|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
@@ -139,6 +140,9 @@ for_window [workspace=$ws4] layout tabbed
 for_window [workspace=$ws6] layout tabbed
 for_window [workspace=$ws7] layout tabbed
 for_window [workspace=$ws8] layout tabbed
+
+## Multi monitors
+workspace $ws9 output HDMI2
 
 ## Specific workspaces
 assign [window_role="(?i)telnet"] $ws3

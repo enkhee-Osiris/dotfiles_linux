@@ -7,13 +7,18 @@ if [[ -f /usr/bin/composer ]]; then
   PATH="$HOME/.config/composer/vendor/bin:$PATH"
 fi
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
+if [[ -f /usr/bin/java ]]; then
+  default_java=`archlinux-java status | grep -i 'default' | awk {'print $1'}`
+  export JAVA_HOME=/usr/lib/jvm/$default_java
 fi
 
-if [[ -f /usr/bin/java ]]; then
-    default_java=`archlinux-java status | grep -i 'default' | awk {'print $1'}`
-    export JAVA_HOME=/usr/lib/jvm/$default_java
+if [[ -f $HOME/.node_modules/bin/phantomjs ]]; then
+  export PHANTOMJS_BIN=$HOME/.node_modules/bin/phantomjs
+fi
+
+if [[ -d $HOME/.gem/ruby ]]; then
+  RUBY_VERSION="2.6.0"
+  PATH="$HOME/.gem/ruby/$RUBY_VERSION/bin:$PATH"
 fi
 
 if [[ -d $HOME/Android/Sdk ]]; then
@@ -26,3 +31,8 @@ if [[ -d $HOME/Android/Sdk ]]; then
     export OpenCV_ANDROID_HOME=$HOME/Android/Sdk/opencv
   fi
 fi
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	exec startx
+fi
+

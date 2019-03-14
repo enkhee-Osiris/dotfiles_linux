@@ -13,7 +13,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme.
-ZSH_THEME="clean"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -36,5 +36,7 @@ eval $(dircolors $HOME/.dir_colors)
 
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(extract git-extras zsh-syntax-highlighting python yarn vi-mode)
+plugins=(extract git-extras zsh-syntax-highlighting python yarn vi-mode fzf pass)
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
 source $ZSH/oh-my-zsh.sh

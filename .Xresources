@@ -57,6 +57,8 @@ URxvt*scrollTtyOutput:   false
 URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 
+URxvt.saveLines: 20000
+
 URxvt.url-launcher: /usr/bin/firefox
 
 URxvt.perl-ext-common: default,matcher

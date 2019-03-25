@@ -36,7 +36,7 @@ eval $(dircolors $HOME/.dir_colors)
 
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(extract git-extras zsh-syntax-highlighting python yarn vi-mode fzf pass)
+plugins=(extract git-extras git zsh-syntax-highlighting python yarn vi-mode fzf pass)
 # source /usr/share/fzf/key-bindings.zsh
 # source /usr/share/fzf/completion.zsh
 source $ZSH/oh-my-zsh.sh

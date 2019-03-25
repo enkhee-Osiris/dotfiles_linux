@@ -357,6 +357,7 @@ you should place your code here."
   (turn-on-fci-mode)
   (setq powerline-default-separator 'zigzag)
   (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode))
+  (add-to-list 'auto-mode-alist '("\\.mdx$" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
   (spacemacs/add-to-hooks 'spacemacs/toggle-line-numbers-on '(prog-mode-hook))
   (spacemacs/add-to-hooks 'spacemacs/toggle-visual-line-navigation-on '(prog-mode-hook))

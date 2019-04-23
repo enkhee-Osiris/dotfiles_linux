@@ -15,7 +15,6 @@
        file-templates      ; auto-snippets for empty files
        (lookup             ; helps you navigate your code and documentation
         +docsets)          ; ...or in Dash docsets locally
-
        snippets            ; my elves. They type so I don't have to
        workspaces          ; tab emulation, persistence & separate workspaces
 
@@ -25,6 +24,7 @@
        ;;ido               ; the other *other* search engine...
        (ivy                ; a search engine for love and life
         +fuzzy)            ; fuzzy search for love and life
+
        :ui
        ;;deft              ; notational velocity for Emacs
        doom                ; what makes DOOM look the way it does
@@ -71,7 +71,7 @@
        ;;ansible
        ;;direnv
        docker
-       ditorconfig         ; let someone else argue about tabs vs spaces
+       editorconfig        ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        flycheck            ; tasing you for every semicolon you forget
        ;;flyspell          ; tasing you for misspelling mispelling

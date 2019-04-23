@@ -36,3 +36,6 @@ if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 	exec startx
 fi
 
+if [[ -d $HOME/.emacs.d/bin ]]; then
+  PATH="$HOME/.emacs.d/bin:$PATH"
+fi

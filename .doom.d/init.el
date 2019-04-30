@@ -8,18 +8,11 @@
 ;; More information about these modules (and what flags they support) can be
 ;; found in modules/README.org.
 
-(doom! :feature
-       ;;debugger          ; FIXME stepping through code, to help you add bugs
-       eval                ; run code, run (also, repls)
-       (evil +everywhere)  ; come to the dark side, we have cookies
-       file-templates      ; auto-snippets for empty files
-       (lookup             ; helps you navigate your code and documentation
-        +docsets)          ; ...or in Dash docsets locally
-       snippets            ; my elves. They type so I don't have to
-       workspaces          ; tab emulation, persistence & separate workspaces
-
-       :completion
-       company             ; the ultimate code completion backend
+(doom! :completion
+       (company            ; the ultimate code completion backend
+        +auto
+        +childframe)
+        ;; +tng)
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        (ivy                ; a search engine for love and life
@@ -32,7 +25,7 @@
        doom-quit           ; DOOM quit-message prompts when you quit Emacs
        ;;fill-column       ; a `fill-column' indicator
        hl-todo             ; highlight TODO/FIXME/NOTE tags
-       ;;indent-guides     ; highlighted indent columns
+       indent-guides       ; highlighted indent columns
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink the current line after jumping
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -47,14 +40,18 @@
        vc-gutter           ; vcs diff in the fringe
        vi-tilde-fringe     ; fringe tildes to mark beyond EOB
        window-select       ; visually switch windows
+       workspaces          ; tab emulation, persistence & separate workspaces
 
        :editor
+       (evil +everywhere)  ; come to the dark side, we have cookies
        fold                ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
        ;;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors    ; editing in many places at once
        ;;parinfer          ; turn lisp into python, sort of
        rotate-text         ; cycle region at point between text candidates
+       file-templates      ; auto-snippets for empty files
+       snippets            ; my elves. They type so I don't have to
 
        :emacs
        (dired              ; making dired pretty [functional]
@@ -68,14 +65,18 @@
        vc                  ; version-control and Emacs, sitting in a tree
 
        :tools
+       ;;debugger          ; FIXME stepping through code, to help you add bugs
        ;;ansible
        ;;direnv
        docker
        editorconfig        ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
+       eval                ; run code, run (also, repls)
        flycheck            ; tasing you for every semicolon you forget
        ;;flyspell          ; tasing you for misspelling mispelling
        ;;gist              ; interacting with github gists
+       (lookup             ; helps you navigate your code and documentation
+        +docsets)          ; ...or in Dash docsets locally
        lsp
        ;;macos             ; MacOS-specific commands
        magit               ; a git porcelain for Emacs
@@ -105,7 +106,7 @@
        ;;elm               ; care for a cup of TEA?
        emacs-lisp          ; drown in parentheses
        ;;ess               ; emacs speaks statistics
-       go                  ; the hipster dialect
+       ;;go                ; the hipster dialect
        ;;(haskell +intero) ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;

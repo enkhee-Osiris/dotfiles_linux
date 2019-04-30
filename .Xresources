@@ -71,11 +71,11 @@ URxvt.colorUL:         #4682B4
 ! Fonts
 URxvt*font: xft:SourceCodePro:pixelsize=14,xft:Symbola:pixelsize=11
 
-rofi.location:		0	
+rofi.location:          0
 rofi.color-enabled:     true
 !                       'background', 'border'
 rofi.color-window:      argb:dc111111, argb:dc111111
-! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
+! State:                'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff2aa198
 rofi.color-urgent:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff2aa198
 rofi.color-active:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff2aa198

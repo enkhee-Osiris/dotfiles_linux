@@ -131,7 +131,7 @@
         +present           ; Emacs for presentations
         +protocol)         ; Support for org-protocol:// links
        ;;perl              ; write code no one else can comprehend
-       ;;php               ; perl's insecure younger brother
+       php                 ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        purescript          ; javascript, but functional
        python              ; beautiful is better than ugly
@@ -139,7 +139,7 @@
        ;;racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ;;ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       rust                ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        (sh +zsh)           ; she sells (ba|z|fi)sh shells on the C xor
        ;;solidity          ; do you need a blockchain? No.
@@ -152,7 +152,7 @@
        ;; toward a specific purpose. They may have additional dependencies and
        ;; should be loaded late.
        :app
-       (email +gmail)      ; emacs as an email client
+       ;;(email +mu4e)      ; emacs as an email client
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought

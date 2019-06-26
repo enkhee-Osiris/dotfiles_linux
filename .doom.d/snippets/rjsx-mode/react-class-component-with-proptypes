@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# name: React Class Component with prop-types
+# key: rccp
+# --
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+type propTypes = {
+  ${1:foo: PropTypes.string}
+};
+
+const defaultProps = {
+  ${2:foo: ''}
+};
+
+class ${3:Foo} extends Component {
+  constructor(props: Props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      ${0:`%`}
+    );
+  }
+}
+
+$3.propTypes = propTypes;
+$3.defaultProps = defaultProps;
+
+export default $3;

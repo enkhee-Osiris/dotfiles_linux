@@ -39,3 +39,7 @@ fi
 if [[ -d $HOME/.emacs.d/bin ]]; then
   PATH="$HOME/.emacs.d/bin:$PATH"
 fi
+
+if [[ -d $(rustc --print sysroot)/lib/rustlib/src/rust/src ]]; then
+  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi

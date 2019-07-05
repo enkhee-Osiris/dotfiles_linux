@@ -23,7 +23,7 @@
        doom                ; what makes DOOM look the way it does
        doom-dashboard      ; a nifty splash screen for Emacs
        doom-quit           ; DOOM quit-message prompts when you quit Emacs
-       ;;fill-column       ; a `fill-column' indicator
+       fill-column         ; a `fill-column' indicator
        hl-todo             ; highlight TODO/FIXME/NOTE tags
        indent-guides       ; highlighted indent columns
        modeline            ; snazzy, Atom-inspired modeline, plus API
@@ -44,19 +44,19 @@
 
        :editor
        (evil +everywhere)  ; come to the dark side, we have cookies
+       file-templates      ; auto-snippets for empty files
        fold                ; (nigh) universal code folding
-       ;;(format +onsave)  ; automated prettiness
+       (format +onsave)    ; automated prettiness
        ;;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors    ; editing in many places at once
        ;;parinfer          ; turn lisp into python, sort of
        rotate-text         ; cycle region at point between text candidates
-       file-templates      ; auto-snippets for empty files
        snippets            ; my elves. They type so I don't have to
 
        :emacs
        (dired              ; making dired pretty [functional]
-       ;;+ranger           ; bringing the goodness of ranger to dired
-       ;;+icons            ; colorful icons for dired-mode
+        ;+ranger           ; bringing the goodness of ranger to dired
+        ;+icons            ; colorful icons for dired-mode
        )
        electric            ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)

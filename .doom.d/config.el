@@ -18,8 +18,6 @@
   (setq rustic-format-on-save t)
   (setq-hook! 'rustic-mode-hook +format-with 'rustfmt))
 
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . text-mode))
-
 (setq doom-font (font-spec :family "Fira Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Fira Sans")
       doom-unicode-font (font-spec :family "DejaVu Sans Mono")

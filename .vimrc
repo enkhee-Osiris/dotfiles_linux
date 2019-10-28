@@ -4,6 +4,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set cursorline          " highlight current line
+syntax on
 
 set ai                  " auto indenting
 set history=100         " keep 100 lines of history

@@ -5,9 +5,10 @@ export LANG="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-	  export EDITOR='vim'
+  export EDITOR='vim'
+  export TERM=xterm
 else
-    export EDITOR='emacs'
+  export EDITOR='emacs'
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -29,14 +30,29 @@ ZSH_THEME="spaceship"
 # ZSH_CUSTOM="$HOME/dotfiles/zsh"
 
 # Dircolors NORD
-eval $(dircolors $HOME/.dir_colors)
+# eval $(dircolors $HOME/.dir_colors)
 
 # Zprofile
 [ -f $HOME/.zprofile ] && source $HOME/.zprofile
 
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(extract git-extras git zsh-syntax-highlighting python yarn vi-mode fzf pass)
+plugins=(
+  extract
+  git
+  git-extras
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  yarn
+  vi-mode
+  fzf
+  pass
+  rust
+  cargo
+  python
+  docker
+  docker-compose
+)
 # source /usr/share/fzf/key-bindings.zsh
 # source /usr/share/fzf/completion.zsh
 source $ZSH/oh-my-zsh.sh

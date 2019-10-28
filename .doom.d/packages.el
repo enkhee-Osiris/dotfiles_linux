@@ -7,3 +7,5 @@
 
 (package! company-tern)
 (package! company-flow)
+
+(package! hledger-mode)

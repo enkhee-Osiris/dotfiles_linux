@@ -11,8 +11,22 @@
         ;; font. This bugs me. Markdown #-marks for headlines are more elegant.
         org-bullets-bullet-list '("#")))
 
-(after! js2-mode
-  (set-company-backend! 'js2-mode 'company-tern 'company-flow))
+(add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
+(setq hledger-jfile "~/.hledger.journal")
+
+
+;; (add-to-list 'ac-modes 'hledger-mode)
+;; (add-hook 'hledger-mode-hook
+;;     (lambda ()
+;;         (setq-local ac-sources '(hledger-ac-source))))
+
+
+;; (after! js2-mode
+;;   (set-company-backend! 'js2-mode 'company-tern 'company-flow))
+
+(after! js2-mode-hook tide-mode
+  (add-hook 'rjsx-mode-hook #'setup-tide-mode)
+  (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append))
 
 (after! rustic
   (setq rustic-format-on-save t)
@@ -36,3 +50,12 @@
         "d" #'racer-find-definition
         "f" #'racer-find-definition-other-frame
         "w" #'racer-find-definition-other-window))
+
+
+(map! :localleader
+      :map tide-mode-map
+      "R"   #'tide-restart-server
+      "f"   #'tide-format
+      "rs"  #'tide-rename-symbol
+      "roi" #'tide-organize-imports
+      "e"   #'tide-project-errors)

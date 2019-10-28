@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: JSDoc @type-l
+# key: @type-l
+# --
+
+@type {${1:type}}

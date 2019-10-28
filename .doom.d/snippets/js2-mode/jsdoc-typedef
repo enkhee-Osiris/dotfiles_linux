@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: JSDoc @typedef
+# key: @typedef
+# --
+
+/**
+ * @typedef {${1:type}} ${2:Name}
+ * @property {${3:type}} ${4:Name}
+ */

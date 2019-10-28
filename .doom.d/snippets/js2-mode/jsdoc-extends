@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: JSDoc @extends
+# key: @extends
+# --
+
+/** @extends {${1:type}} */

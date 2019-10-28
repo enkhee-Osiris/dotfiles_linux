@@ -14,7 +14,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme.
-ZSH_THEME="spaceship"
+ZSH_THEME="clean"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.

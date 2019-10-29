@@ -11,15 +11,8 @@
         ;; font. This bugs me. Markdown #-marks for headlines are more elegant.
         org-bullets-bullet-list '("#")))
 
-(add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
-(setq hledger-jfile "~/.hledger.journal")
-
-
-;; (add-to-list 'ac-modes 'hledger-mode)
-;; (add-hook 'hledger-mode-hook
-;;     (lambda ()
-;;         (setq-local ac-sources '(hledger-ac-source))))
-
+(after! ledger-mode
+  (setq ledger-binary-path "sledger"))
 
 ;; (after! js2-mode
 ;;   (set-company-backend! 'js2-mode 'company-tern 'company-flow))

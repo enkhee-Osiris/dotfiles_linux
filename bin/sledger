@@ -1,0 +1,23 @@
+#!/bin/sh
+
+FILE_DIRECTORY=""
+
+# remove option "-f" from parameters
+i=1
+while [ $i -le $# ]
+do
+    arg="$1"
+    case $arg in
+        -f|--file)
+            shift
+            FILE_DIRECTORY="${1}"
+            ;;
+        *)
+            set -- "$@" "$arg"
+            i=$(( i + 1 ))
+            ;;
+    esac
+    shift
+done
+
+gpg2 --batch -d -q "${FILE_DIRECTORY}" 2>/dev/null | ledger -f - "$@"

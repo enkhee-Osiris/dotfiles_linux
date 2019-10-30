@@ -1,7 +1,5 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here
-
 (after! org
   (setq org-directory "~/.org/"
         org-agenda-files (list org-directory)
@@ -17,10 +15,6 @@
 ;; (after! js2-mode
 ;;   (set-company-backend! 'js2-mode 'company-tern 'company-flow))
 
-(after! js2-mode-hook tide-mode
-  (add-hook 'rjsx-mode-hook #'setup-tide-mode)
-  (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append))
-
 (after! rustic
   (setq rustic-format-on-save t)
   (setq-hook! 'rustic-mode-hook +format-with 'rustfmt))
@@ -30,7 +24,7 @@
       doom-unicode-font (font-spec :family "DejaVu Sans Mono")
       doom-big-font (font-spec :family "Fira Mono" :size 21))
 
-;; relative line numberss by default
+;; relative line numbers by default
 (setq display-line-numbers-type 'relative)
 
 (map! :map +rust-keymap
@@ -43,7 +37,6 @@
         "d" #'racer-find-definition
         "f" #'racer-find-definition-other-frame
         "w" #'racer-find-definition-other-window))
-
 
 (map! :localleader
       :map tide-mode-map

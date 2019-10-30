@@ -1,2 +1,0 @@
-#!/bin/sh
-gpg2 --decrypt $HOME/.hledger.journal.gpg 2>/dev/null | hledger -f- "$@"

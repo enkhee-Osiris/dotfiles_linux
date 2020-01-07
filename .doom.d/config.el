@@ -4,18 +4,16 @@
   (setq org-directory "~/.org/"
         org-agenda-files (list org-directory)
         org-ellipsis " ▼ "
-
-        ;; The standard unicode characters are usually misaligned depending on the
-        ;; font. This bugs me. Markdown #-marks for headlines are more elegant.
         org-bullets-bullet-list '("#")))
 
 (after! ledger-mode
   (setq ledger-binary-path "sledger"))
 
-;; (after! js2-mode
-;;   (set-company-backend! 'js2-mode 'company-tern 'company-flow))
+(after! js2-mode
+  (set-company-backend! 'js2-mode 'company-tern 'company-flow))
 
 (after! rustic
+  ;; (setq lsp-rust-server 'rust-analyzer)
   (setq rustic-format-on-save t)
   (setq-hook! 'rustic-mode-hook +format-with 'rustfmt))
 

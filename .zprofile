@@ -2,9 +2,17 @@ if [[ -d $HOME/dotfiles_linux/bin ]]; then
   PATH="$HOME/dotfiles_linux/bin:$PATH"
 fi
 
+if [[ -d $HOME/go/bin ]]; then
+  PATH="$HOME/go/bin:$PATH"
+fi
+
 if [[ -d $HOME/.node_modules ]]; then
   PATH="$HOME/.node_modules/bin:$PATH"
   export npm_config_prefix=$HOME/.node_modules
+fi
+
+if [[ -d $HOME/.cargo ]]; then
+  PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 if [[ -f /usr/bin/composer ]]; then
@@ -45,6 +53,10 @@ if [[ -d $HOME/Android/Sdk ]]; then
   # [ -d $ANDROID_HOME/tools/bin ] && PATH=$PATH:$ANDROID_HOME/tools/bin
   [ -d $ANDROID_HOME/platform-tools ] && PATH=$PATH:$ANDROID_HOME/platform-tools
   [ -d $ANDROID_HOME/emulator ] && PATH=$PATH:$ANDROID_HOME/emulator
+  if [[ -d $HOME/Android/ndk ]]; then
+    export ANDROID_NDK=$HOME/Android/ndk
+    export ANDROID_NDK_HOME=$HOME/Android/ndk
+  fi
   if [[ -d $ANDROID_HOME/opencv ]]; then
     export OpenCV_ANDROID_HOME=$HOME/Android/Sdk/opencv
   fi

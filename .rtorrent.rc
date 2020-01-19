@@ -128,7 +128,7 @@ network.port_range.set = 49164-49164
 
 # Start opening ports at a random position within the port range.
 #
-#network.port_random.set = no
+network.port_random.set = no
 
 # Check hash for finished torrents. Might be usefull until the bug is
 # fixed that causes lack of diskspace not to be properly reported.
@@ -180,3 +180,14 @@ network.port_range.set = 49164-49164
 #scgi_port = 127.0.0.1:5000
 #scgi_local = /home/user/rtorrent/rpc.socket
 #schedule = scgi_permission,0,0,"execute.nothrow=chmod,\"g+w,o=\",/home/user/rtorrent/rpc.socket"
+
+# Disable
+# trackers.use_udp.set = no
+# dht.mode.set = disable
+# protocol.pex.set = no
+
+# Proxy
+#
+# For tor
+# network.http.proxy_address.set="127.0.0.1:9050"
+# network.proxy_address.set="127.0.0.1:9050"

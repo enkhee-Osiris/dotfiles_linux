@@ -1,10 +1,10 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
-;;;(after! org
-;;;  (setq org-directory "~/.org/"
-;;;        org-agenda-files (list org-directory)
-;;;        org-ellipsis " ▼ "
-;;;        org-bullets-bullet-list '("#")))
+(after! org
+ (setq org-directory "~/.org/"
+       org-agenda-files (list org-directory)
+       org-ellipsis " ▼ "
+       org-bullets-bullet-list '("#")))
 
 (after! ledger-mode
   (setq ledger-binary-path "sledger"))

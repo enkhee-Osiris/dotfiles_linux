@@ -1,6 +1,6 @@
 # General
 set $mod Mod4
-font pango:Misc Termsyn, Wuncon Siji 
+#font pango:Misc Termsyn, Wuncon Siji
 new_window pixel 3
 focus_follows_mouse  yes
 floating_modifier $mod

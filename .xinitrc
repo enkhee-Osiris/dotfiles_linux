@@ -24,7 +24,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # Keyboard delay and repeat
-xset r rate 200 30
+xset r rate 200 50
 
 # start some nice programs
 

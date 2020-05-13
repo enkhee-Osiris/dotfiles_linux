@@ -1,16 +1,22 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 (after! org
- (setq org-directory "~/.org/"
-       org-agenda-files (list org-directory)
-       org-ellipsis " ▼ "
-       org-bullets-bullet-list '("#")))
+  (setq org-directory "~/.org/"
+        org-agenda-files (list org-directory)
+        org-ellipsis " ▼ "
+        org-bullets-bullet-list '("#")))
 
 (after! ledger-mode
   (setq ledger-binary-path "sledger"))
 
 (after! js2-mode
   (set-company-backend! 'js2-mode 'company-tern 'company-flow))
+
+(after! company
+  (defadvice company-in-string-or-comment (around company-in-string-or-comment-hack activate)
+    (if (memq major-mode '(php-mode html-mode web-mode))
+        (setq ad-return-value nil)
+      ad-do-it)))
 
 (after! rustic
   ;; (setq lsp-rust-server 'rust-analyzer)
@@ -32,9 +38,9 @@
 (map! :localleader
       :map +rust-keymap
       (:prefix ("r" . "racer")
-        "d" #'racer-find-definition
-        "f" #'racer-find-definition-other-frame
-        "w" #'racer-find-definition-other-window))
+       "d" #'racer-find-definition
+       "f" #'racer-find-definition-other-frame
+       "w" #'racer-find-definition-other-window))
 
 (map! :localleader
       :map tide-mode-map

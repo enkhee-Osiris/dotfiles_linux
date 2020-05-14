@@ -11,6 +11,10 @@
 --exclude=.git/*
 --exclude=*/compiled/*
 --exclude=compiled/*
+--exclude=*/built/*
+--exclude=built/*
+--exclude=*/build/*
+--exclude=build/*
 --exclude=*/public_html/*
 --exclude=public_html/*
 --exclude=*/.idea/*
@@ -40,6 +44,7 @@
 --exclude=*.jar
 --exclude=*.class
 --exclude=*flymake*
+--exclude=*flycheck*
 --exclude=*.min.js
 --exclude=*.test.js
 --exclude=*.mock.js

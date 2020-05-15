@@ -2,8 +2,7 @@
 
 (defun my-create-tags-if-needed (SRC-DIR &optional FORCE)
   "return the full path of tags file"
-  (let ((dir (file-name-as-directory (file-truename SRC-DIR)))
-        file)
+  (let ((dir (file-name-as-directory (file-truename SRC-DIR))) file)
     (setq file (concat dir "TAGS"))
     (when (or FORCE (not (file-exists-p file)))
       (message "Creating TAGS in %s ..." dir)
@@ -82,6 +81,15 @@
       "e"   #'tide-project-errors)
 
 (after! web-mode
-  (set-company-backend! 'web-mode 'company-files 'company-keywords 'company-dabbrev-code 'company-etags 'company-dabbrev))
+  (set-company-backend! 'web-mode
+     'company-css
+     'company-web-html
+     'company-etags
+     'company-files)
+)
+
+(add-hook! 'lsp-mode-hook :append
+  (when (eq major-mode 'web-mode)
+    (setq-local company-backends (list company-backends))))
 
 (add-hook 'after-save-hook 'my-auto-update-tags-when-save)

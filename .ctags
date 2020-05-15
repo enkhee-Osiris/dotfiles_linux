@@ -19,6 +19,8 @@
 --exclude=public_html/*
 --exclude=*/.idea/*
 --exclude=.idea/*
+--exclude=*/.vscode/*
+--exclude=.vscode/*
 --exclude=*/bower_components/*
 --exclude=bower_components/*
 --exclude=*/images/*
@@ -40,6 +42,7 @@
 --exclude=*/doc/*
 --exclude=doc/*
 
+--exclude=*.md
 --exclude=*.war
 --exclude=*.jar
 --exclude=*.class

@@ -40,7 +40,12 @@
   (setq ledger-binary-path "sledger"))
 
 (after! js2-mode
-  (set-company-backend! 'js2-mode 'company-tern 'company-flow))
+  (set-company-backend! 'js2-mode 'company-tern 'company-flow)
+  (add-hook 'js2-mode-local-vars-hook
+            (lambda ()
+              (when (flycheck-may-enable-checker 'javascript-eslint)
+                (flycheck-select-checker 'javascript-eslint))))
+  )
 
 (after! company
   (defadvice company-in-string-or-comment (around company-in-string-or-comment-hack activate)
@@ -82,11 +87,11 @@
 
 (after! web-mode
   (set-company-backend! 'web-mode
-     'company-css
-     'company-web-html
-     'company-etags
-     'company-files)
-)
+    'company-css
+    'company-web-html
+    'company-etags
+    'company-files)
+  )
 
 (add-hook! 'lsp-mode-hook :append
   (when (eq major-mode 'web-mode)

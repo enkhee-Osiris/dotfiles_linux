@@ -53,9 +53,11 @@ URxvt.pointerBlank:      true
 URxvt.cursorBlink:       true
 URxvt.pointerBlankDelay: 2
 
+URxvt*termName:          rxvt-unicode-256color
 URxvt*scrollTtyOutput:   false
 URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
+URxvt*cursorUnderline:   true
 
 URxvt.saveLines: 20000
 

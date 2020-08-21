@@ -11,6 +11,8 @@
 --exclude=.git/*
 --exclude=*/compiled/*
 --exclude=compiled/*
+--exclude=*/assets/*
+--exclude=assets/*
 --exclude=*/built/*
 --exclude=built/*
 --exclude=*/build/*

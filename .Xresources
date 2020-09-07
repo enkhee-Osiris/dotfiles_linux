@@ -1,99 +1,91 @@
-! +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-! title      Nord XResources                                    +
-! project    nord-xresources                                    +
-! version    0.1.0                                              +
-! repository https://github.com/arcticicestudio/nord-xresources +
-! author     Arctic Ice Studio                                  +
-! email      development@arcticicestudio.com                    +
-! copyright  Copyright (C) 2016                                 +
-! +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+! Color config
+*background:             #000000
+*foreground:             #ffffff
+*fading:                 8
+*fadeColor:              black
+*cursorColor:            #ffffff
+*pointerColorBackground: #000000
+*pointerColorForeground: #ffffff
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+! black
+*color0:                 #000000
+*color8:                 #ffffff
+! red
+*color1:                 #ffffff
+*color9:                 #ffffff
+! green
+*color2:                 #ffffff
+*color10:                #ffffff
+! yellow
+*color3:                 #ffffff
+*color11:                #ffffff
+! blue
+*color4:                 #ffffff
+*color12:                #ffffff
+! magenta
+*color5:                 #ffffff
+*color13:                #ffffff
+! cyan
+*color6:                 #ffffff
+*color14:                #ffffff
+! white
+*color7:                 #ffffff
+*color15:                #ffffff
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+! Xft configs
+Xft.dpi:       96
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.autohint:  false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
-!Urxvt configs
-URxvt.scrollBar:         false
-URxvt.pointerBlank:      true
-URxvt.cursorBlink:       true
-URxvt.pointerBlankDelay: 2
 
-URxvt*termName:          rxvt-unicode-256color
-URxvt*scrollTtyOutput:   false
-URxvt*scrollWithBuffer:  true
-URxvt*scrollTtyKeypress: true
-URxvt*cursorUnderline:   true
+! Urxvt configs
+URxvt.iso14755:               false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
-URxvt.saveLines: 20000
+URxvt*font:                   xft:Dejavu Sans Mono:size=11,xft:Symbola:pixelsize=11
+URxvt*termName:               rxvt-unicode-256color
+URxvt*scrollTtyOutput:        false
+URxvt*scrollWithBuffer:       true
+URxvt*scrollTtyKeypress:      true
 
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.scrollBar:              false
+URxvt.pointerBlank:           true
+URxvt.cursorBlink:            true
+URxvt.pointerBlankDelay:      2
+URxvt.saveLines:              20000
+URxvt.internalBorder:         50
 
-URxvt.perl-ext-common: default,matcher
-URxvt.matcher.button:  1
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
-URxvt.matcher.rend.0:  Uline Bold fg5
-URxvt.colorUL:         #4682B4
+URxvt.colorUL:                #dbdbdb
+URxvt.url-launcher:           /usr/bin/firefox
+URxvt.perl-ext-common:        default,matcher
+URxvt.matcher.button:         1
+URxvt.keysym.C-Delete:        perl:matcher:last
+URxvt.keysym.M-Delete:        perl:matcher:list
+URxvt.matcher.rend.0:         Uline Bold fg5
 
-! Fonts
-URxvt*font: xft:SourceCodePro:pixelsize=14,xft:Symbola:pixelsize=11
 
-rofi.location:          0
-rofi.color-enabled:     true
-!                       'background', 'border'
-rofi.color-window:      argb:dc111111, argb:dc111111
-! State:                'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
-rofi.color-normal:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff2aa198
-rofi.color-urgent:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff2aa198
-rofi.color-active:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff2aa198
-rofi.separator-style:   dash
-rofi.padding:           60
-rofi.hide-scrollbar:    true
-rofi.line-margin:       5
-rofi.fake-transparency: false
-rofi.yoffset:           0
-rofi.xoffset:           0
-rofi.opacity:           90
-rofi.font:              SourceCodePro-Regular 12
+! Rofi configs
+rofi.location:            0
+rofi.modi:                window,run,ssh
+rofi.terminal:            urxvt
+rofi.hide-scrollbar:      false
+rofi.run-shell-command:   /usr/bin/urxvt -e '{cmd}'
+rofi.ssh-command:         {terminal} -e "{ssh-client} {host}"
+rofi.theme:               /home/osiris/.config/rofi/themes/dark.rasi
 
-rofi.modi:              window,run,ssh
-rofi.terminal:          urxvt 
-rofi.run-shell-command: /usr/bin/urxvt -e '{cmd}'
-rofi.ssh-command:       {terminal} -e "{ssh-client} {host}"
+rofi.kb-row-up:           Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab
+rofi.kb-row-down:         Down,Control+j
+rofi.kb-accept-entry:     Control+m,Return,KP_Enter
+rofi.kb-remove-to-eol:    Control+Shift+e
+rofi.kb-mode-next:        Shift+Right,Control+Tab,Control+l
+rofi.kb-mode-previous:    Shift+Left,Control+Shift+Tab,Control+h
+rofi.kb-remove-char-back: BackSpace
 
-xscreensaver.logFile:/var/log/xscreensaver.log
+
+! xScreensaver configs
+xscreensaver.logFile: /var/log/xscreensaver.log

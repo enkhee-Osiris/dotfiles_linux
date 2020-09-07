@@ -1,0 +1,91 @@
+/*
+ * ROFI Dark Theme
+ *
+ * Author: enkhee-Osiris
+ *
+ */
+
+* {
+  fg: #ffffff;
+  bg: #000000;
+
+  spacing: 0;
+  background-color: transparent;
+
+  font: "Dejavu Sans Mono 14";
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+  fullscreen: true;
+  background-color: @bg;
+}
+
+mainbox {
+  padding: 30% 30%;
+}
+
+inputbar {
+  margin: 0px 0px 20px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @fg;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @fg;
+}
+
+entry {
+  margin: 0px 10px;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: true;
+}
+
+element {
+  padding: 5px;
+  text-color: @fg;
+  highlight: bold #95ee8f;
+  border-radius: 8px;
+}
+
+element selected {
+  background-color: @fg;
+  text-color: @bg;
+}
+
+element urgent,
+element selected urgent {
+  background-color: @fg;
+  highlight: bold underline;
+  text-color: @fg;
+}
+
+element active,
+element selected active {
+  background-color: @fg;
+  text-color: @fg;
+}
+
+message {
+  padding: 5px;
+  border-radius: 8px;
+  background-color: @fg;
+  border: 1px;
+  border-color: @fg;
+}
+
+button selected {
+  padding: 5px;
+  border-radius: 8px;
+  background-color: @fg;
+}

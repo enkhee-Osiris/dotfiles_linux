@@ -1,17 +1,21 @@
-# General
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-#font pango:Misc Termsyn, Wuncon Siji
+
+font pango:monospace 8
 new_window pixel 3
 focus_follows_mouse  yes
 floating_modifier $mod
 workspace_auto_back_and_forth yes
 
 ## Gaps
-gaps inner 20
-gaps outer 20
-smart_gaps on
+gaps inner 35
+gaps outer 30
+# smart_gaps off
 smart_borders on
 
+for_window [class=".*"] border pixel 0
+default_floating_border normal
+hide_edge_borders none
 
 # Keybindings
 ## Quick Launch
@@ -19,6 +23,7 @@ bindsym $mod+Return exec --no-startup-id "urxvt"
 bindsym $mod+Shift+t exec --no-startup-id "urxvt -e htop -t htop"
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
 bindsym $mod+p exec --no-startup-id "urxvt -T 'Filemanager' -e ranger"
+bindsym $mod+m exec --no-startup-id "urxvt -T 'Alsamixer' -e alsamixer"
 bindsym $mod+b exec --no-startup-id "firefox"
 bindsym $mod+Shift+b exec --no-startup-id "firefox --private-window"
 bindsym $mod+Control+l exec --no-startup-id "xscreensaver-command -lock"
@@ -80,23 +85,26 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
 
 
 # Workspace
-## Terminal
-set $ws1 "1: TTY"
-## Browser
-set $ws2 "2: WEB"
-## Lab
-set $ws3 "3: LAB"
-## Media
-set $ws4 "4: MED"
-## System
-set $ws5 "5: SYS"
-## Mailing
-set $ws6 "6: COM"
-## Doc
-set $ws7 "7: DOC"
-set $ws8 "8: REV"
-set $ws9 "9: MLT"
-set $ws10 "10: MON"
+## Terminal TTy
+set $ws1 "1: "
+## Browser WEB
+set $ws2 "2: "
+## Lab LAB
+set $ws3 "3: "
+## Media MED
+set $ws4 "4: "
+## System SYS
+set $ws5 "5: "
+## Communication COM
+set $ws6 "6: "
+## Documentation DOC
+set $ws7 "7: "
+## Reverse REV
+set $ws8 "8: ﴣ"
+## Multi Monitor MLT
+set $ws9 "9: "
+## Monitoring MON
+set $ws10 "10: "
 
 ## Workspace keybinding
 bindsym $mod+1 workspace $ws1
@@ -131,8 +139,10 @@ for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move
 for_window [class="(?i)pavucontrol|lxappearance|xarchiver|kamus"] floating enable
 for_window [title="(?i)Filemanager"] floating enable, resize set 1280 600, move position center, focus
 for_window [class="(?i)st|urxvt|viewnior|firefox|bomi|vimiv|emacs|binaryninja|hopper|mysql-workbench-bin"] focus
-for_window [class="(?i)securecrt|wireshark-gtk"] floating enable, border pixel 2
+for_window [class="(?i)securecrt|wireshark-gtk"] floating enable, border pixel 1
 for_window [class="(?i)securecrt"] move window to scratchpad, scratchpad show
+for_window [class="(?i)pavucontrol"] floating enable
+for_window [title="(?i)alsamixer"] floating enable border pixel 1
 for_window [window_role="telnet"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
 for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws3] layout tabbed
@@ -149,7 +159,7 @@ assign [window_role="(?i)telnet"] $ws3
 assign [class="(?i)emacs|eclipse|gns3|securecrt|wireshark-gtk|jetbrains-studio|postman"] $ws3
 assign [class="(?i)vlc|mcomix|mpv|vimiv|gravitdesigner|smplayer|feh|stremio"] $ws4
 assign [title="Filemanager"] $ws5
-assign [class="(?i)telegram|irssi|slack"] $ws6
+assign [class="(?i)telegram|irssi|slack|discord"] $ws6
 assign [class="(?i)mupdf|zathura|fbreader|zeal"] $ws7
 assign [class="(?i)hopper|binaryninja"] $ws8
 assign [title="htop"] $ws10
@@ -165,12 +175,19 @@ set $cindi "#145ba7"
 set $cindiu "#8a9db1"
 
 #<colorclass>           <border> <background> <text> <indicator> <child_border>
-client.focused          $cbg    $cbg    $ccolor $cindi   $cbg
-client.focused_inactive $cbg    $cunfo  $ccolor $cindiu   $cunfo
-client.unfocused        $cbg    $cunfo  $ccolor $cindiu   $cunfo
-client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
+# client.focused          $cbg    $cbg    $ccolor $cindi   $cbg
+# client.focused_inactive $cbg    $cunfo  $ccolor $cindiu  $cunfo
+# client.unfocused        $cbg    $cunfo  $ccolor $cindiu  $cunfo
+# client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
+client.focused          #556064 #556064 #80FFF9 #FDF6E3
+client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+client.background       #2B2C2B
 
 # Startup
 exec_always --no-startup-id "feh --bg-scale ~/.config/i3/bg.jpg"
+exec_always --no-startup-id "picom -b -f --respect-prop-shadow"
 exec_always --no-startup-id "sh ~/.config/polybar/launch.sh"
 exec_always --no-startup-id "xscreensaver -no-splash"

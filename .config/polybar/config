@@ -164,7 +164,7 @@ interval = 1.0
 udspeed-minwidth = 0
 
 format-connected = <label-connected>
-label-connected = "直%downspeed:8%"
+label-connected = "直 %downspeed:8%"
 format-disconnected = "睊"
 
 [module/temperature]

@@ -139,7 +139,7 @@ type = internal/date
 interval = 5
 date =
 date-alt = " %Y-%m-%d"
-time = "   %a %b %d   %H:%M %p"
+time = "  %a %b %d   %H:%M %p"
 time-alt = %H:%M:%S
 label = %date% %time%
 label-foreground = ${color.white}
@@ -180,8 +180,8 @@ thermal-zone = 0
 hwmon-path = /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input
 warn-temperature = 60
 format = <label>
-label = " %temperature-c% "
-label-warn = " %temperature-c% "
+label = "  %temperature-c% "
+label-warn = "  %temperature-c% "
 label-foreground = ${color.white}
 label-warn-foreground = ${color.white}
 
@@ -217,7 +217,7 @@ headphone-mixer = Headphone
 ; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
 headphone-id = 9
 
-format-volume = "   <ramp-volume>  <label-volume> "
+format-volume = "<ramp-volume>  <label-volume>"
 format-volume-prefix = " "
 label-muted-foreground = ${color.white}
 label-muted = " ﱝ  mute "

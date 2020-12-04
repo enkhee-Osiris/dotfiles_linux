@@ -6,6 +6,10 @@ if [[ -d $HOME/go/bin ]]; then
   PATH="$HOME/go/bin:$PATH"
 fi
 
+if [[ -d $HOME/.local/bin ]]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [[ -d $HOME/.node_modules ]]; then
   PATH="$HOME/.node_modules/bin:$PATH"
   export npm_config_prefix=$HOME/.node_modules

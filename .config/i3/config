@@ -22,6 +22,7 @@ hide_edge_borders none
 bindsym $mod+Return exec --no-startup-id "urxvt"
 bindsym $mod+Shift+t exec --no-startup-id "urxvt -e htop -t htop"
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 bindsym $mod+p exec --no-startup-id "urxvt -T 'Filemanager' -e ranger"
 bindsym $mod+m exec --no-startup-id "urxvt -T 'Alsamixer' -e alsamixer"
 bindsym $mod+b exec --no-startup-id "firefox"

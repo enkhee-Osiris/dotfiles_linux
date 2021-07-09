@@ -7,8 +7,8 @@ import urllib.request
 import os
 
 def main():
-    api_key = "REPLACE_ME"
     city = "Ulaanbaatar"
+    api_key = "4dad11062bccaaf6afad1c24823ec9fa"
 
     try:
         data = urllib.parse.urlencode({'q': city, 'appid': api_key, 'units': 'metric'})

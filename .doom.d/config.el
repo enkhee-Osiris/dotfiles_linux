@@ -49,23 +49,29 @@
   (setq ledger-binary-path "sledger"))
 
 (after! js2-mode
-  (set-company-backend! 'js2-mode 'company-tern 'company-flow)
+  ;; (set-company-backend! 'js2-mode 'company-tern 'company-flow)
   (add-hook 'js2-mode-local-vars-hook
             (lambda ()
               (when (flycheck-may-enable-checker 'javascript-eslint)
                 (flycheck-select-checker 'javascript-eslint)))))
 
-(after! css-mode
-  (add-hook 'scss-mode-local-vars-hook
-            (lambda ()
-              (when (flycheck-may-enable-checker 'scss-stylelint)
-                (flycheck-select-checker 'scss-stylelint)))))
+(after! rjsx-mode
+  (setq-hook! 'rjsx-mode-hook +format-with-lsp nil))
 
-(after! company
-  (defadvice company-in-string-or-comment (around company-in-string-or-comment-hack activate)
-    (if (memq major-mode '(php-mode html-mode web-mode))
-        (setq ad-return-value nil)
-      ad-do-it)))
+(after! typescript-mode
+  (setq lsp-clients-typescript-tls-path "/home/osiris/.node_modules/bin/typescript-language-server"))
+
+;; (after! css-mode
+;;   (add-hook 'scss-mode-local-vars-hook
+;;             (lambda ()
+;;               (when (flycheck-may-enable-checker 'scss-stylelint)
+;;                 (flycheck-select-checker 'scss-stylelint)))))
+
+;; (after! company
+;;   (defadvice company-in-string-or-comment (around company-in-string-or-comment-hack activate)
+;;     (if (memq major-mode '(php-mode html-mode web-mode))
+;;         (setq ad-return-value nil)
+;;       ad-do-it)))
 
 (after! rustic
   ;; (setq lsp-rust-server 'rust-analyzer)
@@ -91,23 +97,27 @@
        "f" #'racer-find-definition-other-frame
        "w" #'racer-find-definition-other-window))
 
-(map! :localleader
-      :map tide-mode-map
-      "R"   #'tide-restart-server
-      "f"   #'tide-format
-      "rs"  #'tide-rename-symbol
-      "roi" #'tide-organize-imports
-      "e"   #'tide-project-errors)
+;; (map! :localleader
+;;       :map tide-mode-map
+;;       "R"   #'tide-restart-server
+;;       "f"   #'tide-format
+;;       "rs"  #'tide-rename-symbol
+;;       "roi" #'tide-organize-imports
+;;       "e"   #'tide-project-errors)
 
-(after! web-mode
-  (set-company-backend! 'web-mode
-    'company-css
-    'company-web-html
-    'company-etags
-    'company-files))
+;; (after! web-mode
+;;   (set-company-backend! 'web-mode
+;;     'company-css
+;;     'company-web-html
+;;     'company-etags
+;;     'company-files))
 
-(add-hook! 'lsp-mode-hook :append
-  (when (eq major-mode 'web-mode)
-    (setq-local company-backends (list company-backends))))
+;; (add-hook! 'lsp-mode-hook :append
+;;   (when (eq major-mode 'web-mode)
+;;     (setq-local company-backends (list company-backends))))
+
+
+;; (jdecomp-mode 1)
+;; (setq jdecomp-decompiler-paths '((cfr . "/home/osiris/Downloads/cfr-0_150.jar")))
 
 ;; (add-hook 'after-save-hook 'my-auto-update-tags-when-save)

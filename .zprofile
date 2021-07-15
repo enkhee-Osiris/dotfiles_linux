@@ -33,6 +33,7 @@ fi
 
 if [[ -d $HOME/.cargo ]];then
   PATH="$HOME/.cargo/bin:$PATH"
+  source "$HOME/.cargo/env"
 fi
 
 if command -v archlinux-java &>/dev/null; then

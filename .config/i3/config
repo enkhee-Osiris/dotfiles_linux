@@ -27,7 +27,7 @@ bindsym $mod+p exec --no-startup-id "urxvt -T 'Filemanager' -e ranger"
 bindsym $mod+m exec --no-startup-id "urxvt -T 'Alsamixer' -e alsamixer"
 bindsym $mod+b exec --no-startup-id "firefox"
 bindsym $mod+Shift+b exec --no-startup-id "firefox --private-window"
-bindsym $mod+Control+l exec --no-startup-id "xscreensaver-command -lock"
+bindsym $mod+Control+l exec --no-startup-id "betterlockscreen -l dimblur --off 180"
 
 ## Window Focus (vim)
 bindsym $mod+Tab focus right
@@ -166,6 +166,7 @@ assign [class="(?i)hopper|binaryninja"] $ws8
 assign [title="htop"] $ws10
 assign [class="(?i)st|urxvt"] $ws1
 assign [window_role="browser"] $ws2
+assign [class="(?i)firefox"] $ws2
 
 
 # Color
@@ -191,4 +192,5 @@ client.background       #2B2C2B
 exec_always --no-startup-id "feh --bg-scale ~/.config/i3/bg.jpg"
 # exec_always --no-startup-id "picom -b -f --respect-prop-shadow"
 exec_always --no-startup-id "sh ~/.config/polybar/launch.sh"
-#exec_always --no-startup-id "xscreensaver -no-splash"
+exec_always --no-startup-id "betterlockscreen -w dim"
+exec_always --no-startup-id "source ~/.fehbg"

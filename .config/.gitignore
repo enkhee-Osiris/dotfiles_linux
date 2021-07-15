@@ -1,12 +1,13 @@
 /*
 
+!betterlockscreenrc
 !cava/
 !gtk-3.0/
 !htop/
 !i3/
 !kitty/
+!picom.conf
 !polybar/
 !ranger/
 !rofi/
-!picom.conf
-!greenclip.cfg
+!greenclip.toml

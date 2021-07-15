@@ -159,7 +159,7 @@ exec = weather.py
 
 [module/wifi]
 type = internal/network
-interface = wlp3s0
+interface = wlan0
 interval = 1.0
 udspeed-minwidth = 0
 
@@ -177,7 +177,7 @@ thermal-zone = 0
 ; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 ; to find path to desired file
 ; Default reverts to thermal zone setting
-hwmon-path = /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input
+hwmon-path = /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon4/temp1_input
 warn-temperature = 60
 format = <label>
 label = "  %temperature-c% "

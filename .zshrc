@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export PROMPT_EOL_MARK=''
@@ -14,7 +21,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme.
-ZSH_THEME="clean"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -28,9 +35,6 @@ ZSH_THEME="clean"
 # HIST_STAMPS="dd.mm.yyyy"
 # Custom custom folder
 # ZSH_CUSTOM="$HOME/dotfiles/zsh"
-
-# Dircolors NORD
-# eval $(dircolors $HOME/.dir_colors)
 
 # Zprofile
 [ -f $HOME/.zprofile ] && source $HOME/.zprofile
@@ -53,6 +57,8 @@ plugins=(
   docker
   docker-compose
 )
-# source /usr/share/fzf/key-bindings.zsh
-# source /usr/share/fzf/completion.zsh
+
 source $ZSH/oh-my-zsh.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

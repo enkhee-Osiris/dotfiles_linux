@@ -192,5 +192,3 @@ client.background       #2B2C2B
 exec_always --no-startup-id "feh --bg-scale ~/.config/i3/bg.jpg"
 # exec_always --no-startup-id "picom -b -f --respect-prop-shadow"
 exec_always --no-startup-id "sh ~/.config/polybar/launch.sh"
-exec_always --no-startup-id "betterlockscreen -w dim"
-exec_always --no-startup-id "source ~/.fehbg"

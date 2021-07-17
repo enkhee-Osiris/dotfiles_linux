@@ -38,7 +38,8 @@
 }
 
 #mainbox {
-  border: 0;
+  border: 1px;
+  border-color: @actbg;
   orientation: vertical;
   children: [ entry, message, listview, mode-switcher ];
 }
@@ -65,11 +66,12 @@
 #listview {
   border: 0px 0px 0px;
   border-color: grey;
-  padding: 20 30 70 30;
+  padding: 20px 30px 70px 30px;
 }
 
 #mode-switcher {
-  margin: 10px 30px 30px 30px;
+  border: 1px 0 0 0;
+  border-color: @actbg;
 }
 
 button {

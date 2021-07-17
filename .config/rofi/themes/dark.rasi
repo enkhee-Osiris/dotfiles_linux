@@ -1,91 +1,132 @@
-/*
- * ROFI Dark Theme
- *
- * Author: enkhee-Osiris
- *
- */
+/*******************************************************************************
+ * ROFI Color theme
+ * User: Avasz
+ * Copyleft: Avasz <avasz@protonmail.com>
+ *******************************************************************************/
 
 * {
-  fg: #ffffff;
-  bg: #000000;
+  background-color: #1a2026;
+  text-color: #ffffff;
 
-  spacing: 0;
-  background-color: transparent;
+  selbg: #6ec1d6;
+  actbg: #6ec1d6;
+  urgbg: #f92d72;
+  winbg: #000000;
 
-  font: "Dejavu Sans Mono 14";
-  text-color: @fg;
+  selected-normal-foreground: @winbg;
+  normal-foreground: @text-color;
+  selected-normal-background: @actbg;
+  normal-background: @background-color;
+
+  selected-urgent-foreground: @background-color;
+  urgent-foreground: @text-color;
+  selected-urgent-background: @urgbg;
+  urgent-background: @background-color;
+
+  selected-active-foreground: @winbg;
+  active-foreground: @winbg;
+  selected-active-background: @actbg;
+  active-background: @selbg;
+
+  separator-style: "none";
+  margin: 0;
 }
 
-window {
-  transparency: "real";
-  fullscreen: true;
-  background-color: @bg;
+#window {
+  background-color: @background-color;
+  children: [mainbox];
 }
 
-mainbox {
-  padding: 30% 30%;
+#mainbox {
+  border: 0;
+  orientation: vertical;
+  children: [ entry, message, listview, mode-switcher ];
 }
 
-inputbar {
-  margin: 0px 0px 20px 0px;
-  children: [prompt, textbox-prompt-colon, entry, case-indicator];
-}
-
-prompt {
-  text-color: @fg;
-}
-
-textbox-prompt-colon {
+#entry {
   expand: false;
-  str: ":";
-  text-color: @fg;
+  text-color: @normal-foreground;
+  padding: 10px 0px 10px 0px;
+  border: 0;
+  margin: 30px 30px 0px 30px;
 }
 
-entry {
-  margin: 0px 10px;
+#sidebar {
+  expand: false;
 }
 
-listview {
-  spacing: 5px;
-  dynamic: true;
-  scrollbar: true;
+#textbox {
+  horizontal-align: 0;
+  background-color: silver;
+  padding: 10px 20px 10px 20px;
+  text-color: #000;
 }
 
-element {
-  padding: 5px;
-  text-color: @fg;
-  highlight: bold #95ee8f;
-  border-radius: 8px;
+#listview {
+  border: 0px 0px 0px;
+  border-color: grey;
+  padding: 20 30 70 30;
 }
 
-element selected {
-  background-color: @fg;
-  text-color: @bg;
+#mode-switcher {
+  margin: 10px 30px 30px 30px;
 }
 
-element urgent,
-element selected urgent {
-  background-color: @fg;
-  highlight: bold underline;
-  text-color: @fg;
+button {
+  padding: 8px;
 }
 
-element active,
-element selected active {
-  background-color: @fg;
-  text-color: @fg;
+#button.selected {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
 }
 
-message {
-  padding: 5px;
-  border-radius: 8px;
-  background-color: @fg;
-  border: 1px;
-  border-color: @fg;
+#element {
+  border: 0;
+  padding: 10px 20px 10px 20px;
 }
 
-button selected {
-  padding: 5px;
-  border-radius: 8px;
-  background-color: @fg;
+#element.normal.normal {
+  background-color: @normal-background;
+  text-color: @normal-foreground;
+}
+
+#element.normal.urgent {
+  background-color: @urgent-background;
+  text-color: @urgent-foreground;
+}
+
+#element.normal.active {
+  background-color: @active-background;
+  text-color: @active-foreground;
+}
+
+#element.selected.normal {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
+}
+
+#element.selected.urgent {
+  background-color: @selected-urgent-background;
+  text-color: @selected-urgent-foreground;
+}
+
+#element.selected.active {
+  background-color: @selected-active-background;
+  text-color: @selected-active-foreground;
+}
+
+#element.alternate.normal {
+  background-color: @alternate-normal-background;
+  text-color: @alternate-normal-foreground;
+}
+
+#element.alternate.urgent {
+  background-color: @alternate-urgent-background;
+  text-color: @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+  background-color: @alternate-active-background;
+  text-color: @alternate-active-foreground;
 }

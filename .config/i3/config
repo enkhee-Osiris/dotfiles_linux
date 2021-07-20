@@ -27,7 +27,7 @@ bindsym $mod+p exec --no-startup-id "urxvt -T 'Filemanager' -e ranger"
 bindsym $mod+m exec --no-startup-id "urxvt -T 'Alsamixer' -e alsamixer"
 bindsym $mod+b exec --no-startup-id "firefox"
 bindsym $mod+Shift+b exec --no-startup-id "firefox --private-window"
-bindsym $mod+Control+l exec --no-startup-id "betterlockscreen -l dimblur --off 180"
+bindsym $mod+Control+l exec --no-startup-id "betterlockscreen -l blur --off 180"
 
 ## Window Focus (vim)
 bindsym $mod+Tab focus right
@@ -189,6 +189,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 client.background       #2B2C2B
 
 # Startup
-exec_always --no-startup-id "feh --bg-scale ~/.config/i3/bg.jpg"
-# exec_always --no-startup-id "picom -b -f --respect-prop-shadow"
 exec_always --no-startup-id "sh ~/.config/polybar/launch.sh"
+exec --no-startup-id "feh --bg-scale ~/.config/i3/bg.jpg"
+# exec --no-startup-id "picom -b -f --respect-prop-shadow"
+exec --no-startup-id "xidlehook --not-when-audio --timer 300 'betterlockscreen -l blur --off 180' ''"

@@ -10,9 +10,17 @@ if [[ -d $HOME/.local/bin ]]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [[ -d $HOME/.node_modules ]]; then
-  PATH="$HOME/.node_modules/bin:$PATH"
+if [[ -f /usr/bin/npm ]]; then
   export npm_config_prefix=$HOME/.node_modules
+
+  if [[ -d $HOME/.node_modules ]]
+  then
+    PATH="$HOME/.node_modules/bin:$PATH"
+  else
+    mkdir -p "$HOME/.node_modules"
+    PATH="$HOME/.node_modules/bin:$PATH"
+    export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+  fi
 fi
 
 if [[ -d $HOME/.cargo ]]; then
@@ -68,7 +76,7 @@ if [[ -d $HOME/Android/Sdk ]]; then
 fi
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
+  exec startx
 fi
 
 if [[ -d $HOME/.emacs.d/bin ]]; then
@@ -80,3 +88,5 @@ if command -v rustc &>/dev/null; then
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
   fi
 fi
+
+export PATH="$PATH"

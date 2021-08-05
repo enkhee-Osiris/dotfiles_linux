@@ -11,7 +11,7 @@ if [[ -d $HOME/.local/bin ]]; then
 fi
 
 if [[ -f /usr/bin/npm ]]; then
-  export npm_config_prefix=$HOME/.node_modules
+  export npm_config_prefix="$HOME/.node_modules"
 
   if [[ -d $HOME/.node_modules ]]
   then

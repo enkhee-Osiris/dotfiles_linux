@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: current year
-# key: year
-# --
-
-`(format-time-string "%Y")`

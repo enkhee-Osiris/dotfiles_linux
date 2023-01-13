@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: JSDoc @enum
-# key: @enum
-# --
-
-/** @enum ${1:type} */
